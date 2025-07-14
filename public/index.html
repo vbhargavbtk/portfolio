@@ -418,51 +418,76 @@ html {
 /* Projects */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    }
-
+    justify-items: center;
+}
 .project-card {
-    background: white;
-    padding: 2rem;
+    background: #fff;
+    color: #22223B;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     border: 1px solid #e5e7eb;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-.project-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
-    border-radius: 50%;
-      display: flex;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin: 0 auto 1.5rem;
-}
-
-.project-icon i {
-    font-size: 2rem;
-    color: white;
-    }
-
-.project-card h3 {
-    font-size: 1.25rem;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 360px;
+    min-width: 200px;
+    min-height: 300px;
     font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    overflow: hidden;
+    padding: 1.5em 1em 1em 1em;
 }
-
-.project-card p {
-    color: #64748b;
-      line-height: 1.6;
+.project-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
+.project-icon {
+    font-size: 2.2em;
+    margin-bottom: 0.3em;
+}
+.project-desc {
+    font-size: 0.98em;
+    font-weight: 400;
+    color: #22223B;
+    margin-bottom: 0.7em;
+    display: block;
+    overflow: visible;
+    text-overflow: initial;
+    min-height: unset;
+}
+.project-links {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    margin-top: auto;
+}
+.project-btn {
+    padding: 6px 10px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+}
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card {
+        max-width: 100%;
+    }
 }
 
 /* Contact */
@@ -920,14 +945,19 @@ html {
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-lock"></i>
                     </div>
-                    <h3>E-commerce Management System</h3>
-                    <p>An online shopping website that manages products, orders, and user experience.</p>
+                    <h3 style="margin-bottom: 0.5em;">EncryptoLab</h3>
+                    <p class="project-desc">Encrypt and decrypt text using classical and modern algorithms. Built with HTML, CSS, JavaScript, and CryptoJS. Includes step-by-step explanations and theme toggle.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/vbhargavbtk/EncryptoLab" target="_blank" class="btn btn-secondary project-btn"><i class="fab fa-github"></i></a>
+                        <a href="https://encryptolab.vercel.app/" target="_blank" class="btn btn-primary project-btn"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <!-- Add more project-card divs here for additional projects -->
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
     <!-- Certificates Section -->
     <section id="certificates" class="section">
